@@ -1,7 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #0c0c0c;
-  background-color: #ffffff;
+  background-color: #949494;
 }
 
 .layout_padding {
@@ -287,7 +287,9 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 8px 35px;
+  /*About button color*/
   background-color: #e93f1a;
+  /*About button text color*/
   color: #ffffff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -297,7 +299,8 @@ a:focus {
 }
 
 .about_section .detail-box a:hover {
-  background-color: transparent;
+  /*Default background: transparent*/
+  background-color: #e93f1a;
   border-color: #e93f1a;
   color: #e93f1a;
 }
