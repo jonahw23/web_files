@@ -595,12 +595,14 @@ a:focus {
 
 /* footer section*/
 .footer_section {
+
   font-weight: 500;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
   background-color: #1d1d1d;
+  font-size: xx-small;
 }
 
 .footer_section p {
