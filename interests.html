@@ -12,7 +12,9 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Service Title</title>
+  <title>Witte's Woeful Website</title>
+
+  <link rel="icon" href="images/favicon.png">
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -35,14 +37,15 @@
 
 <body class="sub_page">
   <div class="hero_area">
-    <!-- header section strats -->
+    <!-- header section starts -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand mr-5" href="index.html">
-            <img src="images/logo.png" alt="">
+            <!-- Image for span below -->
+            <img src="" alt="">
             <span>
-              Service Span
+              Jonah Witte
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -52,22 +55,24 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
-                <li class="nav-item ">
+                <li class="nav-item active">
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="service.html"> Service </a>
+                  <a class="nav-link" href="interests.html"> Interests </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="projects.html"> Projects </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
                 </li>
               </ul>
+              <!--Search bar
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
               </form>
+              -->
             </div>
           </div>
         </nav>
@@ -78,54 +83,74 @@
 
   <div class="body_bg layout_padding">
 
-    <!-- service section -->
+    <!-- interests section -->
 
     <section class="service_section ">
       <div class="container">
         <div class="heading_container">
           <h2>
-            At Your Service
+            There's a lot of cool stuff in the world
+          </h2>
+        </div>
+        <div class="heading_container" style="margin-top:-2%">
+          <h2 style="color:orangered; font-weight:normal">
+            But some stuff is especially cool:
           </h2>
         </div>
       </div>
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <div class="box">
+            <div class="box align-items-end align-items-md-start text-right text-md-left">
               <div class="img-box">
-                <img src="images/s-1.png" alt="">
+                <img src="images/dieClip.png" alt="" width="50" height="50">
               </div>
               <h4>
-                Written with Love
+                Board Games
               </h4>
               <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of
-                letters, as opposed to using 'Content here, content t,
+                My combination of competetiveness, puzzle-loving, and appreciation for craftsmanship
+                are all attributes that contribute to my fondness for tabletop games. I have a personal
+                collection I've cultivated of around 100 games, plus more than a dozen I've made myself 
+                (although the rules for some of those are long-lost to time). Some of my current favorite 
+                tabletop games are Scythe, Gloom, and Smash Up. 
+                <br><br> I also love tabletop RPGs—5e D&D and <i>13th Age</i> are the two systems I play
+                with the most, but I'm always open to trying new RPGs, either as a DM or a player.
               </p>
-              <a href="">
-                Read More
-              </a>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="box align-items-end align-items-md-start text-right text-md-left">
+            <div class="box">
               <div class="img-box">
-                <img src="images/s-2.png" alt="">
+                <img src="images/mtgClip.png" alt="" width="50" height="50">
               </div>
               <h4>
-                Fast Turnaround
+                Magic the Gathering
               </h4>
               <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of
-                letters, as opposed to using 'Content here, content here', making it look like
+                Technically this falls under the tabletop game category, but I've spent enough
+                time and money on this addictive game that it deserves separate mention. In 
+                addition to playing the game in paper and digital, I buy and sell cards and handpaint
+                alters for comissions. If you play, feel free to add me as a friend on MTG Arena—my id is 
+                <u><span onclick="clickText()" style="cursor:pointer" id="copyText">Ace#25552</span></u>.
+                <br><br>
+                You can also add me on Discord
+                at <u><span onclick="clickText()" style="cursor:pointer" id="copyText">AceGamer#1805</span></u>
+                because if you want to talk about <i>Magic</i> you undoubtedly have one (nerd).
               </p>
-              <a href="">
-                Read More
-              </a>
+              <script>
+                /*Function to have the above text be copied when it's clicked*/
+                function clickText() {
+                  // Get the text field
+                  var copyText = "Ace#25552"
+
+                  // Copy the text inside the text field
+                  navigator.clipboard.writeText(copyText);
+                  
+                  // Alert the copied text
+                  alert("Copied the text: " + copyText);
+                }
+              </script>
             </div>
           </div>
         </div>
@@ -133,10 +158,10 @@
           <div class="col-md-6">
             <div class="box">
               <div class="img-box">
-                <img src="images/s-3.png" alt="">
+                <img src="images/frisbeeClip.png" alt="" width="50" height="50">
               </div>
               <h4>
-                Up to Date
+                Ultimate Frisbee
               </h4>
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when
@@ -173,7 +198,7 @@
       </div>
     </section>
 
-    <!-- end service section -->
+    <!-- end interests section -->
 
   </div>
   <!-- info section -->
