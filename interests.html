@@ -128,21 +128,32 @@
                 Magic the Gathering
               </h4>
               <p>
-                Technically this falls under the tabletop game category, but I've spent enough
+                Technically this still falls under the tabletop game category, but I've spent enough
                 time and money on this addictive game that it deserves separate mention. In 
                 addition to playing the game in paper and digital, I buy and sell cards and handpaint
                 alters for comissions. If you play, feel free to add me as a friend on MTG Arena—my id is 
-                <u><span onclick="clickText()" style="cursor:pointer" id="copyText">Ace#25552</span></u>.
+                <u><span onclick="clickArena()" style="cursor:pointer" id="copyText">Ace#25552</span></u>.
                 <br><br>
-                You can also add me on Discord
-                at <u><span onclick="clickText()" style="cursor:pointer" id="copyText">AceGamer#1805</span></u>
-                because if you want to talk about <i>Magic</i> you undoubtedly have one (nerd).
+                If you're still reading this, you can also add me on Discord
+                at <u><span onclick="clickDiscord()" style="cursor:pointer" id="copyText">AceGamer#1805</span></u>—because 
+                if you want to talk about <i>Magic</i> you undoubtedly have one (nerd).
               </p>
               <script>
-                /*Function to have the above text be copied when it's clicked*/
-                function clickText() {
+                /*Functions to have the above text be copied when it's clicked*/
+                function clickArena() {
                   // Get the text field
                   var copyText = "Ace#25552"
+
+                  // Copy the text inside the text field
+                  navigator.clipboard.writeText(copyText);
+                  
+                  // Alert the copied text
+                  alert("Copied the text: " + copyText);
+                }
+                function clickDiscord() {
+                  // Get the text field
+
+                  var copyText = "AceGamer#1805"
 
                   // Copy the text inside the text field
                   navigator.clipboard.writeText(copyText);
@@ -164,14 +175,15 @@
                 Ultimate Frisbee
               </h4>
               <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of
-                letters, as opposed to using 'Content here, content here', making it look like now use Lorem Ipsum as
-                their default model text,
+                After a childhood filled with mediocre rec-sport experiences, I discovered Ultimate 
+                Frisbee in high school and quickly realized that it was everything I had been looking
+                for. I doubt a 4-sentence blurb on a random dude's website is going to be the deciding factor
+                that convinces anyone to play—but seriously, everyone should try it. <br><br> Anyone looking
+                for another player for a rec league (or just a friend to throw with every now and then), feel free 
+                to reach out!
               </p>
-              <a href="">
-                Read More
+              <a href="https://www.youtube.com/watch?v=D3mpy8YWWag">
+                Learn how to play in 3 minutes
               </a>
             </div>
           </div>
@@ -203,23 +215,23 @@
   </div>
   <!-- info section -->
 
-  <section class="info_section layout_padding">
+  <section class="info_section layout_padding" style="background-color:darkgray">
     <div class="footer_contact">
       <div class="heading_container">
         <h2>
-          Contact Us
+          Contact Info
         </h2>
       </div>
       <div class="box">
-        <a href="" class="img-box">
-          <img src="images/location.png" alt="" class="img-1">
-          <img src="images/location-o.png" alt="" class="img-2">
+        <a href="https://instagram.com/witte.jonah.exe?igshid=OGQ5ZDc2ODk2ZA==" class="img-box">
+          <img src="images/instagram.png" alt="" class="img-1">
+          <img src="images/instagram-o.png" alt="" class="img-2">
         </a>
-        <a href="" class="img-box">
+        <a href="tel:2407042330" class="img-box">
           <img src="images/call.png" alt="" class="img-1">
           <img src="images/call-o.png" alt="" class="img-2">
         </a>
-        <a href="" class="img-box">
+        <a href = "mailto: jonahwitte10@gmail.com" class="img-box">
           <img src="images/envelope.png" alt="" class="img-1">
           <img src="images/envelope-o.png" alt="" class="img-2">
         </a>
