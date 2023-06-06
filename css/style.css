@@ -290,7 +290,7 @@ a:focus {
   padding: 8px 35px;
   /*About button color*/
   background-color: #e93f1a;
-  /*About button text color*/
+  /*About button text color, might need to reload cache to view*/
   color: #ffffff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
