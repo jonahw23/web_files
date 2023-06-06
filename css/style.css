@@ -44,7 +44,8 @@ body {
 /*header section*/
 .hero_area {
   height: 100vh;
-  background-image: url(../images/hero-bg.jpg);
+  /*main section background image*/
+  background-image: url(./../images/darkwood.jpg);
   background-size: cover;
 }
 
