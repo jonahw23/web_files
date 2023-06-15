@@ -1,44 +1,16 @@
-import mailchannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
-
-export const onRequest = mailchannelsPlugin({
-  personalizations: [
-    {
-      to: [{ name: "ACME Support", email: "hello@example.com" }],
-    },
-  ],
-  from: { name: "Enquiry", email: "no-reply@example.com" },
-  respondWith: () =>
-    new Response(null, {
-      status: 302,
-      headers: { Location: "/thank-you" },
-    }),
-});
-
-export default {
-    async fetch(request) {
-      send_request = new Request('https://api.mailchannels.net/tx/v1/send', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          personalizations: [
-            {
-              to: [{ email: 'jonahwitte10@gmail.com', name: 'Test Recipient' }],
-            },
-          ],
-          from: {
-            email: 'sender@example.com',
-            name: 'Workers - MailChannels integration',
-          },
-          subject: 'Look! No servers',
-          content: [
-            {
-              type: 'text/plain',
-              value: 'And no email service accounts and all for free too!',
-            },
-          ],
-        }),
-      })
-    },
+/**
+ * POST /api/submit
+ */
+export async function onRequestPost(context) {
+  try {
+    let input = await context.request.formData();
+    let pretty = JSON.stringify([...input], null, 2);
+    return new Response(pretty, {
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+    });
+  } catch (err) {
+    return new Response('Error parsing JSON content', { status: 400 });
   }
+}
