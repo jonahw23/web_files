@@ -413,11 +413,33 @@ a:focus {
   color: #ffffff;
 }
 
-.contact_section .contact_form input.message_input {
-  padding: 25px 0 90px 15px;
+/* Remember to refresh css to see changes*/
+.contact_section .contact_form textarea{
+  margin: 15px 0;
+  width: 100%; 
+  padding: 25px 0 90px 15px; 
+  background-color: #1c1b2d; 
+  color: #ffffff;
+  overflow:hidden
 }
 
-.contact_section .contact_form input::-webkit-input-placeholder {
+.contact_section .contact_form textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form textarea::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact_section .contact_form textarea::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
