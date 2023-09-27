@@ -510,6 +510,7 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: right;
   padding-left: 20px;
 }
 
