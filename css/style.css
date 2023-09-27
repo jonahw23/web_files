@@ -638,5 +638,12 @@ a:focus {
   color: #ffffff;
 }
 
+@media (max-width:629px) {
+  img#hideonmobile {
+    display: none;
+  }
+}
+
+
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
