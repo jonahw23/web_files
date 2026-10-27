@@ -1,0 +1,12 @@
+body {
+    background: white;
+    color: black;
+}
+
+.card-header {
+    font-weight: 700;
+}
+
+.p-card-header {
+    font-weight: 700;
+}

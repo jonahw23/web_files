@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light;
+  --page-background: white;
+  --text-color: black;
+  --accent-color: black;
+  --font-family: "Times New Roman", serif;
+  --button-background: buttonface;
+  --button-border: 2px outset buttonborder;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--page-background);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+#typed-text {
+  white-space: pre-wrap;
+}
+
+#typed-text::after {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.9em;
+  margin-left: 0.12em;
+  background: var(--accent-color);
+  content: "";
+  vertical-align: -0.05em;
+  animation: blink 0.8s step-end infinite;
+}
+
+button {
+  background: var(--button-background);
+  border: var(--button-border);
+}
+
+#switch-theme {
+  padding: 0.05em 0.2em;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
