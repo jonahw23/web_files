@@ -17,6 +17,7 @@ const themePhrases = [
   "Feels... derivative",
   "I can see why you stuck with the inital theme",
 ];
+const themeStylesheetLoads = new Map();
 let homeButtonPlaceholder;
 let homeHero;
 
@@ -75,15 +76,46 @@ if (isTheme(savedTheme)) {
 }
 
 if (switchThemeButton) {
-  switchThemeButton.addEventListener("click", () => {
+  const activeTheme = themeStylesheet.getAttribute("href").match(/style\d+/)?.[0];
+  for (let index = 1; index <= themeCount; index += 1) {
+    const theme = `style${index}`;
+    if (theme === activeTheme) {
+      continue;
+    }
+
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.media = "not all";
+    stylesheet.href = `css/${theme}.css`;
+    const loaded = new Promise((resolve) => {
+      stylesheet.addEventListener("load", () => resolve(true), { once: true });
+      stylesheet.addEventListener("error", () => resolve(false), { once: true });
+    });
+    document.head.append(stylesheet);
+    themeStylesheetLoads.set(theme, loaded);
+  }
+
+  switchThemeButton.addEventListener("click", async () => {
     const currentTheme = themeStylesheet.getAttribute("href").match(/style\d+/)?.[0] ?? "style0";
     const nextTheme = getNextTheme(currentTheme);
     const phraseIndex = Number(localStorage.getItem("themePhraseIndex")) || 0;
 
-    themeStylesheet.href = `css/${nextTheme}.css`;
-    localStorage.setItem("theme", nextTheme);
-    localStorage.setItem("themePhraseIndex", String((phraseIndex + 1) % themePhrases.length));
-    switchThemeButton.textContent = themePhrases[phraseIndex % themePhrases.length];
-    enableHomeHero();
+    switchThemeButton.disabled = true;
+    try {
+      const stylesheetLoaded = await themeStylesheetLoads.get(nextTheme);
+      if (!stylesheetLoaded) {
+        throw new Error(`Unable to load css/${nextTheme}.css`);
+      }
+
+      themeStylesheet.href = `css/${nextTheme}.css`;
+      localStorage.setItem("theme", nextTheme);
+      localStorage.setItem("themePhraseIndex", String((phraseIndex + 1) % themePhrases.length));
+      switchThemeButton.textContent = themePhrases[phraseIndex % themePhrases.length];
+      enableHomeHero();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      switchThemeButton.disabled = false;
+    }
   });
 }
