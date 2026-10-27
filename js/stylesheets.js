@@ -18,6 +18,7 @@ const themePhrases = [
   "I can see why you stuck with the inital theme",
 ];
 const themeStylesheetLoads = new Map();
+const preloadedThemeStylesheets = new Map();
 let homeButtonPlaceholder;
 let homeHero;
 
@@ -76,7 +77,9 @@ if (isTheme(savedTheme)) {
 }
 
 if (switchThemeButton) {
-  const activeTheme = themeStylesheet.getAttribute("href").match(/style\d+/)?.[0];
+  let activeTheme = themeStylesheet.getAttribute("href").match(/style\d+/)?.[0] ?? "style0";
+  let activeThemeStylesheet = themeStylesheet;
+
   for (let index = 1; index <= themeCount; index += 1) {
     const theme = `style${index}`;
     if (theme === activeTheme) {
@@ -93,11 +96,11 @@ if (switchThemeButton) {
     });
     document.head.append(stylesheet);
     themeStylesheetLoads.set(theme, loaded);
+    preloadedThemeStylesheets.set(theme, stylesheet);
   }
 
   switchThemeButton.addEventListener("click", async () => {
-    const currentTheme = themeStylesheet.getAttribute("href").match(/style\d+/)?.[0] ?? "style0";
-    const nextTheme = getNextTheme(currentTheme);
+    const nextTheme = getNextTheme(activeTheme);
     const phraseIndex = Number(localStorage.getItem("themePhraseIndex")) || 0;
 
     switchThemeButton.disabled = true;
@@ -107,7 +110,11 @@ if (switchThemeButton) {
         throw new Error(`Unable to load css/${nextTheme}.css`);
       }
 
-      themeStylesheet.href = `css/${nextTheme}.css`;
+      const nextThemeStylesheet = preloadedThemeStylesheets.get(nextTheme);
+      nextThemeStylesheet.media = "all";
+      activeThemeStylesheet.media = "not all";
+      activeThemeStylesheet = nextThemeStylesheet;
+      activeTheme = nextTheme;
       localStorage.setItem("theme", nextTheme);
       localStorage.setItem("themePhraseIndex", String((phraseIndex + 1) % themePhrases.length));
       switchThemeButton.textContent = themePhrases[phraseIndex % themePhrases.length];
