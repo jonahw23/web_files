@@ -1,6 +1,6 @@
 @import url("style1.css");
 
-:root { --page-background: #f4f0fa; --text-color: #342d49; --accent-color: #8265b4; --font-family: "Segoe UI", Arial, sans-serif; --button-background: #8265b4; --button-border: 1px solid #8265b4; }
+:root { --page-background: #f4f0fa; --text-color: #342d49; --accent-color: #8265b4; --font-family: "Candara", sans-serif; --button-background: #8265b4; --button-border: 1px solid #8265b4; }
 body { background: radial-gradient(ellipse at 90% 4%, #e4d8f6, transparent 36rem), #f4f0fa; }
 main > nav { border-color: #ded4ef; background: rgb(255 253 255 / 92%); }
 main > nav a, .card-header, .p-card-header, #contact-name { color: #70559f; }
@@ -9,3 +9,37 @@ main > nav a:hover, main > nav a:focus-visible { background: #eee6fa; color: #59
 .char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #e3daef; border-radius: 1.5rem; background: #fffdfd; box-shadow: 0 0.8rem 2rem #59427f12; }
 button, #switch-theme { border-radius: 1rem; }
 .home-hero #switch-theme { color: #59427f; }
+
+body {
+  background: radial-gradient(ellipse at 90% 4%, #e4d8f6, transparent 36rem), #f4f0fa;
+}
+
+main > nav {
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 0.7rem 2rem #59427f18;
+}
+
+.home-hero {
+  overflow: hidden;
+  border-left: 0.65rem solid #f3d9b8;
+  background:
+    linear-gradient(90deg, rgb(37 26 61 / 45%) 0 34%, transparent 34%),
+    linear-gradient(145deg, #514075, #9476bd 65%, #d397bd);
+}
+
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin {
+  transition: transform 250ms ease, box-shadow 250ms ease, background-color 250ms ease;
+}
+
+.char-card:hover, .project-card:hover, #about-div:hover, #project-div:hover, #contact-name:hover, .talk-text:hover, #email:hover, #instagram:hover, #linkedin:hover {
+  transform: translateY(-5px) scale(1.015);
+  background-color: #fff;
+  box-shadow: 0 1.2rem 2.5rem #59427f26;
+}
+
+main > nav a, a, button {
+  transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+main > nav a:hover, a:hover { transform: translateY(-2px) rotate(-1deg); }
+button:hover { box-shadow: 0 0.5rem 1rem #59427f33; }

@@ -1,6 +1,6 @@
 @import url("style1.css");
 
-:root { color-scheme: dark; --page-background: #07110a; --text-color: #c6f7c8; --accent-color: #54f078; --font-family: "Consolas", "Courier New", monospace; --button-background: #195b2b; --button-border: 1px solid #54f078; }
+:root { color-scheme: dark; --page-background: #07110a; --text-color: #c6f7c8; --accent-color: #54f078; --font-family: "Lucida Console", Monaco, monospace; --button-background: #195b2b; --button-border: 1px solid #54f078; }
 body { background: repeating-linear-gradient(0deg, #07110a, #07110a 3px, #09150d 3px, #09150d 6px); }
 main > nav { border-color: #246136; border-radius: 0.3rem; background: #0b1b10; }
 main > nav a, .card-header, .p-card-header, #contact-name { color: #75ff93; }
@@ -10,3 +10,59 @@ main > nav a:hover, main > nav a:focus-visible { background: #163d21; color: whi
 a { color: #79e4ff; }
 button, #switch-theme { border-color: #54f078; background: #195b2b; }
 .home-hero #switch-theme { background: #b7ffc4; color: #0b2813; }
+
+body {
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 3px, rgb(84 240 120 / 5%) 3px 4px),
+    linear-gradient(90deg, #07110a, #0b1b10 50%, #07110a);
+  background-size: 100% 4px, 100% 100%;
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b1b10;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 1.7rem, rgb(84 240 120 / 8%) 1.7rem 1.76rem),
+    linear-gradient(145deg, #0b1b10, #123f20);
+  background-size: 100% 100%, 100% 100%;
+}
+
+.home-hero::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgb(84 240 120 / 12%) 50%, transparent 65%);
+  content: "";
+  pointer-events: none;
+  animation: terminal-scan 6s linear infinite;
+}
+
+.home-hero::after {
+  position: absolute;
+  z-index: 0;
+  top: 18%;
+  right: 6%;
+  width: clamp(5rem, 12vw, 10rem);
+  height: 5rem;
+  border-left: 1px solid rgb(117 255 147 / 28%);
+  background: repeating-linear-gradient(0deg, transparent 0 0.7rem, rgb(117 255 147 / 24%) 0.7rem 0.76rem, transparent 0.76rem 1.25rem);
+  content: "";
+  opacity: 0.45;
+  animation: terminal-output 5s steps(4, end) infinite alternate;
+  pointer-events: none;
+}
+
+.home-hero h1, .home-hero #switch-theme {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes terminal-scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes terminal-output {
+  to { opacity: 0.15; transform: translateY(0.6rem); }
+}

@@ -1,6 +1,6 @@
 @import url("style1.css");
 
-:root { --page-background: #101b2c; --text-color: #f4eddd; --accent-color: #d6b66f; --font-family: "Palatino Linotype", Palatino, Georgia, serif; --button-background: #a17d3d; --button-border: 1px solid #d6b66f; }
+:root { --page-background: #101b2c; --text-color: #f4eddd; --accent-color: #d6b66f; --font-family: "Palatino Linotype", Palatino, "Baskerville Old Face", serif; --button-background: #a17d3d; --button-border: 1px solid #d6b66f; }
 body { background: radial-gradient(ellipse at top, #263850, transparent 42rem), #101b2c; }
 main > nav { border-color: #8a7147; border-radius: 0.4rem; background: #152338; }
 main > nav a, .card-header, .p-card-header, #contact-name { color: #e3c985; }

@@ -10,3 +10,34 @@ main > nav a:hover, main > nav a:focus-visible { background: #e1edcf; color: #27
 .card-header, .p-card-header, #contact-name { color: #416a42; }
 button, #switch-theme { border-radius: 0.6rem; }
 .home-hero #switch-theme { color: #274c35; }
+
+body {
+  background:
+    radial-gradient(ellipse at 86% 12%, #d9e7c7, transparent 34rem),
+    var(--page-background);
+}
+
+.home-hero {
+  overflow: hidden;
+  background-image:
+    linear-gradient(90deg, #274c35 0 0.6rem, transparent 0.6rem),
+    linear-gradient(140deg, #365c3b, #73965a);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 12%), 0 1.25rem 3rem rgb(39 76 53 / 16%);
+}
+
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin {
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.char-card:hover, .project-card:hover, #about-div:hover, #project-div:hover, #contact-name:hover, .talk-text:hover, #email:hover, #instagram:hover, #linkedin:hover {
+  transform: translateY(-6px) rotate(-0.3deg);
+  border-color: #9ab67a;
+  box-shadow: 0 1.2rem 2rem rgb(39 76 53 / 16%);
+}
+
+main > nav a, a, button {
+  transition: transform 200ms ease, color 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+
+main > nav a:hover, a:hover { transform: translateY(-2px); }
+button:hover { box-shadow: 0 0.5rem 1rem rgb(39 76 53 / 25%); }

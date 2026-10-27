@@ -1,7 +1,18 @@
 @import url("style1.css");
 
-:root { --page-background: #eaf5fa; --text-color: #213b4d; --accent-color: #3982a4; --font-family: "Segoe UI", Arial, sans-serif; --button-background: #3982a4; --button-border: 1px solid #3982a4; }
-body { background: linear-gradient(160deg, #d7ecf6, #f6fbfd 42%, #dceef4); }
+:root { --page-background: #eaf5fa; --text-color: #213b4d; --accent-color: #3982a4; --font-family: "Calibri", sans-serif; --button-background: #3982a4; --button-border: 1px solid #3982a4; }
+body {
+  background-color: #eaf5fa;
+  background-image:
+    radial-gradient(3px 3px at 24px 32px, rgb(255 255 255 / 92%) 50%, transparent 58%),
+    radial-gradient(2.5px 2.5px at 91px 117px, rgb(255 255 255 / 84%) 50%, transparent 58%),
+    radial-gradient(2.5px 2.5px at 151px 67px, rgb(57 130 164 / 24%) 50%, transparent 58%),
+    radial-gradient(1.5px 1.5px at 61px 158px, rgb(255 255 255 / 68%) 50%, transparent 60%),
+    radial-gradient(2px 2px at 137px 21px, rgb(255 255 255 / 72%) 50%, transparent 60%),
+    linear-gradient(160deg, #d7ecf6, #f6fbfd 42%, #dceef4);
+  background-size: 180px 180px, 230px 230px, 270px 270px, 310px 310px, 370px 370px, 100% 100%;
+  animation: snowfall 10s linear infinite;
+}
 main > nav { border-color: #cae0eb; border-radius: 1rem; background: rgb(250 254 255 / 94%); }
 main > nav a, .card-header, .p-card-header, #contact-name { color: #286e91; }
 main > nav a:hover, main > nav a:focus-visible { background: #d9edf5; color: #185371; }
@@ -9,3 +20,57 @@ main > nav a:hover, main > nav a:focus-visible { background: #d9edf5; color: #18
 .char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #d1e5ed; border-radius: 1rem; background: #fafeff; box-shadow: 0 0.8rem 2rem #286e9112; }
 button, #switch-theme { border-radius: 0.75rem; }
 .home-hero #switch-theme { color: #28617b; }
+
+.home-hero {
+  overflow: hidden;
+  background-image:
+    radial-gradient(3px 3px at 36px 48px, rgb(255 255 255 / 78%) 50%, transparent 58%),
+    radial-gradient(2.5px 2.5px at 113px 97px, rgb(255 255 255 / 58%) 50%, transparent 58%),
+    radial-gradient(1.5px 1.5px at 77px 153px, rgb(255 255 255 / 72%) 50%, transparent 60%),
+    radial-gradient(2px 2px at 159px 22px, rgb(255 255 255 / 68%) 50%, transparent 60%),
+    linear-gradient(135deg, #316a89, #55a1bb 60%, #9acbd3);
+  background-size: 180px 180px, 230px 230px, 290px 290px, 350px 350px, 100% 100%;
+  animation: snow-flurry 8s linear infinite;
+}
+
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin {
+  position: relative;
+  overflow: hidden;
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.char-card::after, .project-card::after, #about-div::after, #project-div::after, #contact-name::after, .talk-text::after, #email::after, #instagram::after, #linkedin::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -120%;
+  width: 70%;
+  background: linear-gradient(100deg, transparent, rgb(57 130 164 / 12%), transparent);
+  content: "";
+  transition: left 500ms ease;
+}
+
+.char-card:hover, .project-card:hover, #about-div:hover, #project-div:hover, #contact-name:hover, .talk-text:hover, #email:hover, #instagram:hover, #linkedin:hover {
+  transform: translateY(-5px);
+  border-color: #69a9c5;
+  box-shadow: 0 1rem 2rem #286e9125;
+}
+
+.char-card:hover::after, .project-card:hover::after, #about-div:hover::after, #project-div:hover::after, #contact-name:hover::after, .talk-text:hover::after, #email:hover::after, #instagram:hover::after, #linkedin:hover::after {
+  left: 150%;
+}
+
+main > nav a, a, button {
+  transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+main > nav a:hover, a:hover { transform: translateY(-2px); }
+button:hover { box-shadow: 0 0.5rem 1rem #286e9140; }
+
+@keyframes snowfall {
+  to { background-position: 73px 180px, -118px 230px, 41px 270px, -93px 310px, 157px 370px, 100% 100%; }
+}
+
+@keyframes snow-flurry {
+  to { background-position: -59px 180px, 96px 230px, 133px 290px, -81px 350px, 100% 100%; }
+}

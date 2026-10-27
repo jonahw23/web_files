@@ -1,6 +1,6 @@
 @import url("style1.css");
 
-:root { --page-background: #f5f8df; --text-color: #344128; --accent-color: #668f2e; --font-family: "Trebuchet MS", sans-serif; --button-background: #668f2e; --button-border: 1px solid #668f2e; }
+:root { --page-background: #f5f8df; --text-color: #344128; --accent-color: #668f2e; --font-family: "Corbel", sans-serif; --button-background: #668f2e; --button-border: 1px solid #668f2e; }
 body { background: radial-gradient(circle at 85% 12%, #e0ef9b 0, transparent 22rem), #f5f8df; }
 main > nav { border-color: #d8e5ac; border-radius: 0.8rem; background: #fcffef; }
 main > nav a, .card-header, .p-card-header, #contact-name { color: #557a22; }
@@ -9,3 +9,42 @@ main > nav a:hover, main > nav a:focus-visible { background: #e9f4bd; color: #3e
 .char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #e0e8c1; border-radius: 1rem; background: #fcffef; box-shadow: 0 0.75rem 2rem #526a1915; }
 button, #switch-theme { border-radius: 0.6rem; }
 .home-hero #switch-theme { color: #466323; }
+
+body {
+  background: radial-gradient(circle at 85% 12%, #e0ef9b 0, transparent 22rem), #f5f8df;
+}
+
+main > nav {
+  border-width: 2px;
+  box-shadow: 0.35rem 0.35rem 0 #c6d889;
+}
+
+.home-hero {
+  overflow: hidden;
+  border: 2px solid #344128;
+  background-image:
+    linear-gradient(90deg, transparent 0 66%, rgb(255 255 255 / 10%) 66% 66.5%, transparent 66.5%),
+    repeating-linear-gradient(0deg, transparent 0 1.8rem, rgb(52 65 40 / 15%) 1.8rem 1.86rem),
+    linear-gradient(115deg, #466b2b, #8eae37 52%, #e1bb38);
+  background-size: 100% 100%, 100% 100%, 100% 100%;
+  box-shadow: 0.6rem 0.6rem 0 #344128;
+}
+
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin {
+  border: 2px solid #526d2d;
+  box-shadow: 0.3rem 0.3rem 0 #d9e8a9;
+  transition: transform 200ms steps(3, end), box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.char-card:hover, .project-card:hover, #about-div:hover, #project-div:hover, #contact-name:hover, .talk-text:hover, #email:hover, #instagram:hover, #linkedin:hover {
+  transform: translate(-4px, -4px) rotate(1deg);
+  background-color: #f0f7d2;
+  box-shadow: 0.65rem 0.65rem 0 #526d2d;
+}
+
+main > nav a, a, button {
+  transition: transform 160ms steps(3, end), color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+main > nav a:hover, a:hover { transform: scale(1.08) rotate(-2deg); }
+button:hover { box-shadow: 0.35rem 0.35rem 0 #344128; }

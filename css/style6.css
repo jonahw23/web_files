@@ -1,6 +1,6 @@
 @import url("style1.css");
 
-:root { --page-background: #fff3e8; --text-color: #402923; --accent-color: #d34f32; --font-family: "Trebuchet MS", sans-serif; --button-background: #d34f32; --button-border: 1px solid #d34f32; }
+:root { --page-background: #fff3e8; --text-color: #402923; --accent-color: #d34f32; --font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif; --button-background: #d34f32; --button-border: 1px solid #d34f32; }
 body { background: radial-gradient(ellipse at 10% 0, #ffd8a8, transparent 38rem), #fff3e8; }
 main > nav { border-color: #f1c5a5; background: #fffaf4; }
 main > nav a { color: #93412d; }
@@ -10,3 +10,33 @@ main > nav a:hover, main > nav a:focus-visible { background: #ffe4cd; color: #76
 .card-header, .p-card-header, #contact-name { color: #b43e2d; }
 button, #switch-theme { border-radius: 0.65rem; }
 .home-hero #switch-theme { color: #9d332a; }
+
+body {
+  background: radial-gradient(ellipse at 10% 0, #ffd8a8, transparent 38rem), #fff3e8;
+}
+
+.home-hero {
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, #783c46 0 1px, transparent 1px),
+    linear-gradient(180deg, #f5ad53 0 18%, #ed783d 18% 40%, #d7573c 40% 72%, #9f4146 72% 100%);
+  background-size: 100% 1.5rem, 100% 100%;
+  box-shadow: inset 0 -3rem 0 rgb(83 42 57 / 14%);
+}
+
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin {
+  transition: transform 240ms cubic-bezier(.2, .8, .2, 1), box-shadow 240ms ease, border-radius 240ms ease;
+}
+
+.char-card:hover, .project-card:hover, #about-div:hover, #project-div:hover, #contact-name:hover, .talk-text:hover, #email:hover, #instagram:hover, #linkedin:hover {
+  transform: translateY(-7px) rotate(0.5deg);
+  border-radius: 0.45rem 1.8rem;
+  box-shadow: 0 1rem 2rem #8d392c33;
+}
+
+main > nav a, a, button {
+  transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+main > nav a:hover, a:hover { transform: scale(1.06); }
+button:hover { box-shadow: 0 0.5rem 1.2rem #9d332a55; }

@@ -1,6 +1,6 @@
 @import url("style1.css");
 
-:root { color-scheme: dark; --page-background: #17191c; --text-color: #f2eee5; --accent-color: #d0ad70; --font-family: "Segoe UI", Arial, sans-serif; --button-background: #b58b4d; --button-border: 1px solid #d0ad70; }
+:root { color-scheme: dark; --page-background: #17191c; --text-color: #f2eee5; --accent-color: #d0ad70; --font-family: Tahoma, Verdana, sans-serif; --button-background: #b58b4d; --button-border: 1px solid #d0ad70; }
 body { background: radial-gradient(ellipse at 50% 0, #34312c, transparent 42rem), #17191c; }
 main { width: min(100% - 2rem, 64rem); }
 main > nav { border-color: #605745; border-radius: 0.35rem; background: #202124; }
