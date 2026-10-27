@@ -8,24 +8,28 @@ const themePhrases = [
   "I want more website",
   "Let's see it in another color",
   "Meh, could be cleaner",
+  "Real developers use markdown",
   "I hate websites",
   "I hate YOUR website",
   "Seen it before",
   "THIS is the UI you chose?",
   "Not exactly inspired",
-  "Styles are for losers anyways",
+  "Nice CSS bro",
+  "Styles are for bums anyways",
   "Feels... derivative",
-  "I can see why you stuck with the inital theme",
+  "Unstyled was better",
 ];
 const themeStylesheetLoads = new Map();
 const preloadedThemeStylesheets = new Map();
 let homeButtonPlaceholder;
 let homeHero;
 
+// check whether a style is within the 1-25 range of completed styles
 function isTheme(value) {
   return /^style(?:[1-9]|1\d|2[0-5])$/.test(value);
 }
 
+// add a hero before the theme-switch button
 function enableHomeHero() {
   if (!homeHeading || !homeMain || !switchThemeButton || homeHero) {
     return;
@@ -41,6 +45,7 @@ function enableHomeHero() {
   homeHero.append(homeHeading, switchThemeButton);
 }
 
+// make a len 25 queue from the styles, then randomly shuffle each element
 function createThemeQueue(currentTheme) {
   const queue = Array.from({ length: themeCount }, (_, index) => `style${index + 1}`)
     .filter((theme) => theme !== currentTheme);
@@ -53,6 +58,7 @@ function createThemeQueue(currentTheme) {
   return queue;
 }
 
+// get the next theme from the queue, or make a new queue if empty
 function getNextTheme(currentTheme) {
   const savedQueue = localStorage.getItem("themeQueue");
   let queue = savedQueue
@@ -70,6 +76,7 @@ function getNextTheme(currentTheme) {
   return nextTheme;
 }
 
+// try to load the last theme, set it as current
 const savedTheme = localStorage.getItem("theme");
 if (isTheme(savedTheme)) {
   themeStylesheet.href = `/css/${savedTheme}.css`;
@@ -77,9 +84,16 @@ if (isTheme(savedTheme)) {
 }
 
 if (switchThemeButton) {
+  // try to load stored label onto the button text
+  const savedButtonLabel = localStorage.getItem("themeButtonLabel");
+  if (themePhrases.includes(savedButtonLabel)) {
+    switchThemeButton.textContent = savedButtonLabel;
+  }
+
   let activeTheme = themeStylesheet.getAttribute("href").match(/style\d+/)?.[0] ?? "style0";
   let activeThemeStylesheet = themeStylesheet;
 
+  // for each theme, store it as a stylesheet for quick access
   for (let index = 1; index <= themeCount; index += 1) {
     const theme = `style${index}`;
     if (theme === activeTheme) {
@@ -99,6 +113,8 @@ if (switchThemeButton) {
     preloadedThemeStylesheets.set(theme, stylesheet);
   }
 
+  // when the switch button is clicked, get the next theme from the queue,
+  // access its saved stylesheet above, and enable it as the active stylesheet
   switchThemeButton.addEventListener("click", async () => {
     const nextTheme = getNextTheme(activeTheme);
     const phraseIndex = Number(localStorage.getItem("themePhraseIndex")) || 0;
@@ -118,6 +134,7 @@ if (switchThemeButton) {
       localStorage.setItem("theme", nextTheme);
       localStorage.setItem("themePhraseIndex", String((phraseIndex + 1) % themePhrases.length));
       switchThemeButton.textContent = themePhrases[phraseIndex % themePhrases.length];
+      localStorage.setItem("themeButtonLabel", switchThemeButton.textContent);
       enableHomeHero();
     } catch (error) {
       console.error(error);
