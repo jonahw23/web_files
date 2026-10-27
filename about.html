@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      if (/^style(?:[1-9]|1\d|2[0-5])$/.test(localStorage.getItem("theme"))) {
+        document.documentElement.style.visibility = "hidden";
+        window.setTimeout(() => {
+          if (document.documentElement.style.visibility === "hidden") {
+            console.error("Theme initialization timed out; showing the page with its fallback styles.");
+            document.documentElement.style.visibility = "";
+          }
+        }, 5000);
+      }
+    } catch (error) {
+      console.error("Unable to read the saved theme.", error);
+    }
+  </script>
 
   <link rel="icon" href="images/favicon.png">
   
   <link rel="stylesheet" href="css/underlying.css">
   <link id="theme" rel="stylesheet" href="css/style0.css">
-  <script>
-    (() => {
-      const savedTheme = localStorage.getItem("theme");
-      if (/^style(?:[1-9]|1\d|2[0-5])$/.test(savedTheme)) {
-        document.getElementById("theme").href = `css/${savedTheme}.css`;
-      }
-    })();
-  </script>
   <script src="js/stylesheets.js" defer></script>
 
   <title>Witteverse</title>
