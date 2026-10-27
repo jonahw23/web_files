@@ -1,0 +1,11 @@
+@import url("style1.css");
+
+:root { --page-background: #f4f0fa; --text-color: #342d49; --accent-color: #8265b4; --font-family: "Segoe UI", Arial, sans-serif; --button-background: #8265b4; --button-border: 1px solid #8265b4; }
+body { background: radial-gradient(ellipse at 90% 4%, #e4d8f6, transparent 36rem), #f4f0fa; }
+main > nav { border-color: #ded4ef; background: rgb(255 253 255 / 92%); }
+main > nav a, .card-header, .p-card-header, #contact-name { color: #70559f; }
+main > nav a:hover, main > nav a:focus-visible { background: #eee6fa; color: #59427f; }
+.home-hero { border: 1px solid #d5c7ef; border-radius: 2rem; background: linear-gradient(145deg, #514075, #9476bd 65%, #d397bd); }
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #e3daef; border-radius: 1.5rem; background: #fffdfd; box-shadow: 0 0.8rem 2rem #59427f12; }
+button, #switch-theme { border-radius: 1rem; }
+.home-hero #switch-theme { color: #59427f; }

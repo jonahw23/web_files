@@ -1,0 +1,13 @@
+@import url("style1.css");
+
+:root { --page-background: #eeeeec; --text-color: #171717; --accent-color: #111; --font-family: Arial, Helvetica, sans-serif; --button-background: #111; --button-border: 1px solid #111; }
+body { background: repeating-linear-gradient(0deg, #f7f7f5, #f7f7f5 1px, #eeeeec 1px, #eeeeec 2px); }
+main { width: min(100% - 2rem, 64rem); }
+main > nav { border-color: #171717; border-radius: 0; background: #f9f9f7; box-shadow: 4px 4px 0 #171717; }
+main > nav a, .card-header, .p-card-header, #contact-name { color: #171717; }
+main > nav a:hover, main > nav a:focus-visible { background: #171717; color: #fff; }
+.home-hero { border: 1px solid #111; border-radius: 0; background: #171717; box-shadow: 8px 8px 0 #aaa; color: white; }
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #171717; border-radius: 0; background: #fafaf8; box-shadow: 3px 3px 0 #b7b7b3; }
+a { color: #111; text-decoration-thickness: 2px; }
+button, #switch-theme { border-radius: 0; }
+.home-hero #switch-theme { border-color: white; background: white; color: black; }

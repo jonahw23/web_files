@@ -1,0 +1,14 @@
+@import url("style1.css");
+
+:root { --page-background: #f7f1e5; --text-color: #282520; --accent-color: #795a3a; --font-family: Georgia, "Times New Roman", serif; --button-background: #795a3a; --button-border: 1px solid #795a3a; }
+body { background: repeating-linear-gradient(90deg, #f7f1e5, #f7f1e5 48%, #f3ecde 48%, #f3ecde 96%); }
+main { width: min(100% - 2rem, 60rem); }
+main > nav { border-color: #cfc4ae; border-radius: 0; background: #fffcf4; }
+main > nav a { color: #514430; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; }
+main > nav a:hover, main > nav a:focus-visible { background: #e9dfcd; color: #302719; }
+.home-hero { border-top: 0.4rem solid #795a3a; border-bottom: 0.4rem solid #795a3a; border-radius: 0; background: #e7ddca; color: #282520; }
+.home-hero h1 { font-family: Georgia, serif; font-weight: 400; }
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #d6cbb7; border-radius: 0; background: #fffcf4; box-shadow: none; }
+.card-header, .p-card-header, #contact-name { color: #684b2d; }
+button, #switch-theme { border-radius: 0; font-family: Arial, sans-serif; text-transform: uppercase; }
+.home-hero #switch-theme { background: #795a3a; color: white; }

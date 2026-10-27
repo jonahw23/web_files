@@ -1,0 +1,11 @@
+@import url("style1.css");
+
+:root { --page-background: #f5f8df; --text-color: #344128; --accent-color: #668f2e; --font-family: "Trebuchet MS", sans-serif; --button-background: #668f2e; --button-border: 1px solid #668f2e; }
+body { background: radial-gradient(circle at 85% 12%, #e0ef9b 0, transparent 22rem), #f5f8df; }
+main > nav { border-color: #d8e5ac; border-radius: 0.8rem; background: #fcffef; }
+main > nav a, .card-header, .p-card-header, #contact-name { color: #557a22; }
+main > nav a:hover, main > nav a:focus-visible { background: #e9f4bd; color: #3e6117; }
+.home-hero { border-radius: 1rem 3rem 1rem 3rem; background: linear-gradient(130deg, #416326, #81a838 55%, #d5a92e); }
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border-color: #e0e8c1; border-radius: 1rem; background: #fcffef; box-shadow: 0 0.75rem 2rem #526a1915; }
+button, #switch-theme { border-radius: 0.6rem; }
+.home-hero #switch-theme { color: #466323; }

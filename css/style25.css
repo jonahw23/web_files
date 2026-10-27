@@ -1,0 +1,13 @@
+@import url("style1.css");
+
+:root { --page-background: #fff8d8; --text-color: #211d18; --accent-color: #e33427; --font-family: "Arial Black", Impact, sans-serif; --button-background: #e33427; --button-border: 3px solid #211d18; }
+body { background: radial-gradient(circle, #211d18 1.2px, transparent 1.5px), #fff8d8; background-size: 18px 18px; }
+main > nav { border: 3px solid #211d18; border-radius: 0.4rem; background: #fff; box-shadow: 5px 5px 0 #211d18; }
+main > nav a { color: #211d18; font-weight: 900; text-transform: uppercase; }
+main > nav a:hover, main > nav a:focus-visible { background: #f6d739; color: #211d18; }
+.home-hero { border: 4px solid #211d18; border-radius: 0.5rem; background: #e33427; box-shadow: 9px 9px 0 #211d18; color: white; }
+.home-hero h1 { text-transform: uppercase; }
+.char-card, .project-card, #about-div, #project-div, #contact-name, .talk-text, #email, #instagram, #linkedin, .intro-text { border: 3px solid #211d18; border-radius: 0.4rem; background: #fff; box-shadow: 4px 4px 0 #211d18; }
+.card-header, .p-card-header, #contact-name { color: #e33427; text-transform: uppercase; }
+button, #switch-theme { border: 3px solid #211d18; border-radius: 0.4rem; box-shadow: 3px 3px 0 #211d18; text-transform: uppercase; }
+.home-hero #switch-theme { border-color: #211d18; background: #f6d739; color: #211d18; }
