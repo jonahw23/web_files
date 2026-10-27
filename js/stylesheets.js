@@ -22,18 +22,6 @@ const preloadedThemeStylesheets = new Map();
 let homeButtonPlaceholder;
 let homeHero;
 
-function loadThemeStylesheet(theme) {
-  return new Promise((resolve) => {
-    themeStylesheet.addEventListener("load", () => resolve(true), { once: true });
-    themeStylesheet.addEventListener("error", () => resolve(false), { once: true });
-    themeStylesheet.href = `css/${theme}.css`;
-  });
-}
-
-function revealPage() {
-  document.documentElement.style.visibility = "";
-}
-
 function isTheme(value) {
   return /^style(?:[1-9]|1\d|2[0-5])$/.test(value);
 }
@@ -82,31 +70,10 @@ function getNextTheme(currentTheme) {
   return nextTheme;
 }
 
-let savedTheme;
-try {
-  savedTheme = localStorage.getItem("theme");
-} catch (error) {
-  console.error("Unable to read the saved theme.", error);
-}
-
+const savedTheme = localStorage.getItem("theme");
 if (isTheme(savedTheme)) {
+  themeStylesheet.href = `css/${savedTheme}.css`;
   enableHomeHero();
-  loadThemeStylesheet(savedTheme).then((loaded) => {
-    if (loaded) {
-      revealPage();
-      return;
-    }
-
-    console.error(`Unable to load css/${savedTheme}.css`);
-    loadThemeStylesheet("style0").then((fallbackLoaded) => {
-      if (!fallbackLoaded) {
-        console.error("Unable to load css/style0.css");
-      }
-      revealPage();
-    });
-  });
-} else {
-  revealPage();
 }
 
 if (switchThemeButton) {
