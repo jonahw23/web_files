@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { --page-background: #fffdf5; --text-color: #29333a; --accent-color: #266e8b; --font-family: "Courier New", monospace; --button-background: #266e8b; --button-border: 1px solid #266e8b; }
 body { background-color: #fffdf5; background-image: linear-gradient(#e9eff1 1px, transparent 1px); background-size: 100% 2.1rem; }

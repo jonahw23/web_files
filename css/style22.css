@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { color-scheme: dark; --page-background: #171522; --text-color: #f8f5e9; --accent-color: #ffd447; --font-family: "Segoe UI", Arial, sans-serif; --button-background: #ffd447; --button-border: 1px solid #ffd447; }
 body { background: radial-gradient(ellipse at top, #332751, transparent 38rem), #171522; }

@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { --page-background: #f2e5cf; --text-color: #463728; --accent-color: #98703e; --font-family: Rockwell, "American Typewriter", serif; --button-background: #98703e; --button-border: 1px solid #98703e; }
 body { background: radial-gradient(ellipse at 20% 5%, #e4c28e, transparent 34rem), #f2e5cf; }

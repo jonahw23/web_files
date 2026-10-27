@@ -72,7 +72,7 @@ function getNextTheme(currentTheme) {
 
 const savedTheme = localStorage.getItem("theme");
 if (isTheme(savedTheme)) {
-  themeStylesheet.href = `css/${savedTheme}.css`;
+  themeStylesheet.href = `/css/${savedTheme}.css`;
   enableHomeHero();
 }
 
@@ -89,7 +89,7 @@ if (switchThemeButton) {
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
     stylesheet.media = "not all";
-    stylesheet.href = `css/${theme}.css`;
+    stylesheet.href = `/css/${theme}.css`;
     const loaded = new Promise((resolve) => {
       stylesheet.addEventListener("load", () => resolve(true), { once: true });
       stylesheet.addEventListener("error", () => resolve(false), { once: true });
@@ -107,7 +107,7 @@ if (switchThemeButton) {
     try {
       const stylesheetLoaded = await themeStylesheetLoads.get(nextTheme);
       if (!stylesheetLoaded) {
-        throw new Error(`Unable to load css/${nextTheme}.css`);
+        throw new Error(`Unable to load /css/${nextTheme}.css`);
       }
 
       const nextThemeStylesheet = preloadedThemeStylesheets.get(nextTheme);

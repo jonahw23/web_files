@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { --page-background: #eaf5fa; --text-color: #213b4d; --accent-color: #3982a4; --font-family: "Calibri", sans-serif; --button-background: #3982a4; --button-border: 1px solid #3982a4; }
 body {

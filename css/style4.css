@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { color-scheme: dark; --page-background: #090c20; --text-color: #e7e8ff; --accent-color: #62f5e3; --font-family: "Bahnschrift SemiCondensed", "Bahnschrift", sans-serif; --button-background: #762de2; --button-border: 1px solid #a477ff; }
 body { background: radial-gradient(ellipse at 50% 0, #24194c, transparent 45rem), #090c20; }

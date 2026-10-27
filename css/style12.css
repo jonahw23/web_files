@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { color-scheme: dark; --page-background: #07110a; --text-color: #c6f7c8; --accent-color: #54f078; --font-family: "Lucida Console", Monaco, monospace; --button-background: #195b2b; --button-border: 1px solid #54f078; }
 body { background: repeating-linear-gradient(0deg, #07110a, #07110a 3px, #09150d 3px, #09150d 6px); }

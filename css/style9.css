@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { --page-background: #eeeeec; --text-color: #171717; --accent-color: #111; --font-family: Arial, Helvetica, sans-serif; --button-background: #111; --button-border: 1px solid #111; }
 body { background: repeating-linear-gradient(0deg, #f7f7f5, #f7f7f5 1px, #eeeeec 1px, #eeeeec 2px); }

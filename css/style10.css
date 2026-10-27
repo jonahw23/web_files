@@ -1,4 +1,4 @@
-@import url("style1.css");
+@import url("/css/style1.css");
 
 :root { color-scheme: dark; --page-background: #130b24; --text-color: #f7e9ff; --accent-color: #ff63cc; --font-family: "Century Gothic", sans-serif; --button-background: #ee3bb7; --button-border: 1px solid #ff8be0; }
 body { background: linear-gradient(180deg, #241044, #110b22 52rem, #130b24); }
