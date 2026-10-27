@@ -8,6 +8,14 @@
   
   <link rel="stylesheet" href="css/underlying.css">
   <link id="theme" rel="stylesheet" href="css/style0.css">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      if (/^style(?:[1-9]|1\d|2[0-5])$/.test(savedTheme)) {
+        document.getElementById("theme").href = `css/${savedTheme}.css`;
+      }
+    })();
+  </script>
   <script src="js/stylesheets.js" defer></script>
 
   <title>Witteverse</title>
