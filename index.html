@@ -32,7 +32,20 @@
   <link rel="preload" as="style" href="/css/style23.css">
   <link rel="preload" as="style" href="/css/style24.css">
   <link rel="preload" as="style" href="/css/style25.css">
-  <link id="theme" rel="stylesheet" href="/css/style0.css">
+  <script data-cfasync="false">
+    (() => {
+      let theme = "style0";
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        if (/^style(?:[1-9]|1\d|2[0-5])$/.test(savedTheme)) {
+          theme = savedTheme;
+        }
+      } catch (error) {
+        console.error("Unable to read the saved theme.", error);
+      }
+      document.write(`<link id="theme" rel="stylesheet" href="/css/${theme}.css">`);
+    })();
+  </script>
   <script src="js/type_text.js" defer></script>
   <script src="js/stylesheets.js" defer></script>
   <title>Witteverse</title>
